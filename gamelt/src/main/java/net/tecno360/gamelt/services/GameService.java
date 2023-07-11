@@ -12,8 +12,9 @@ import java.util.List;
 public class GameService {
     @Autowired
     private GameRepository gameRepo;
-    public List<Game> findAll(){
-        return gameRepo.findAll();
+    public List<GameDTO> findAll(){
+        List<Game> result = gameRepo.findAll();
+        return result.stream().map(GameDTO::new).toList();
 
     }
 }
