@@ -1,1 +1,1 @@
-# GameLt - An API of a list of games
+# GameLt - An API Rest of a list of games
