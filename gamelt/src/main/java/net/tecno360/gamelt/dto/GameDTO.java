@@ -1,10 +1,8 @@
 package net.tecno360.gamelt.dto;
 
-import jakarta.persistence.Column;
 import net.tecno360.gamelt.entities.Game;
 import org.springframework.beans.BeanUtils;
 
-import java.beans.BeanProperty;
 
 public class GameDTO {
     private long id;
