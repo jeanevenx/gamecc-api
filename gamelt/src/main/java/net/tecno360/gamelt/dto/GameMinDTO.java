@@ -3,7 +3,7 @@ package net.tecno360.gamelt.dto;
 
 import net.tecno360.gamelt.entities.Game;
 
-public class GameDTO {
+public class GameMinDTO {
 
 
     private long id;
@@ -12,10 +12,10 @@ public class GameDTO {
     private String imgUrl;
     private String shortDescription;
 
-    public GameDTO() {
+    public GameMinDTO() {
     }
 
-    public GameDTO(Game entity) {
+    public GameMinDTO(Game entity) {
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();

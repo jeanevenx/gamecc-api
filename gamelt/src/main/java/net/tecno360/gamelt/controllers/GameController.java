@@ -1,7 +1,6 @@
 package net.tecno360.gamelt.controllers;
 
-import net.tecno360.gamelt.dto.GameDTO;
-import net.tecno360.gamelt.entities.Game;
+import net.tecno360.gamelt.dto.GameMinDTO;
 import net.tecno360.gamelt.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ public class GameController {
     private GameService gameService;
 
     @GetMapping
-    public List<GameDTO> getAll(){
+    public List<GameMinDTO> getAll(){
         return gameService.findAll();
 
     }
