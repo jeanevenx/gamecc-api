@@ -15,7 +15,7 @@ public class ClassificationListService {
     private ClassificationListRepository classificationRepo;
 
     @Transactional(readOnly = true)
-    public List<ClassificationListDTO> getAllClassification(){
+    public List<ClassificationListDTO> findAllClassification(){
         List<ClassificationList> result = classificationRepo.findAll();
         return result.stream().map(ClassificationListDTO::new).toList();
 

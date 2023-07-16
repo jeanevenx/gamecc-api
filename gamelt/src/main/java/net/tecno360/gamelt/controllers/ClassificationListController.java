@@ -18,12 +18,21 @@ import java.util.List;
 public class ClassificationListController {
 
     @Autowired
-    private ClassificationListService ClassificationService;
+    private ClassificationListService classificationListService;
+
+    @Autowired
+    private GameService gameService;
 
     @GetMapping
     public List<ClassificationListDTO> getAll(){
-        return ClassificationService.getAllClassification();
+        return classificationListService.findAllClassification();
 
+    }
+
+    @GetMapping(value = "/{id}/games")
+    public List<GameMinDTO> getGameByClassification(@PathVariable Long id){
+
+        return gameService.findGameByClassification(id);
     }
 
 }

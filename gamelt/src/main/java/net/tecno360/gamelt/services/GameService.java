@@ -3,6 +3,7 @@ package net.tecno360.gamelt.services;
 import net.tecno360.gamelt.dto.GameDTO;
 import net.tecno360.gamelt.dto.GameMinDTO;
 import net.tecno360.gamelt.entities.Game;
+import net.tecno360.gamelt.projections.GameMinProjection;
 import net.tecno360.gamelt.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,16 +19,23 @@ public class GameService {
     private GameRepository gameRepo;
 
     @Transactional(readOnly = true)
-    public List<GameMinDTO> getAllGames(){
+    public List<GameMinDTO> findAllGames(){
         List<Game> result = gameRepo.findAll();
         return result.stream().map(GameMinDTO::new).toList();
 
     }
 
     @Transactional(readOnly = true)
-    public GameDTO getGameById(Long id){
+    public GameDTO findGameById(Long id){
         Game result = gameRepo.findById(id).orElseThrow();
 
         return new GameDTO(result);
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findGameByClassification(Long ClassificationId){
+        List<GameMinProjection> result = gameRepo.searchByClassification(ClassificationId);
+
+        return result.stream().map(GameMinDTO::new).toList();
     }
 }
