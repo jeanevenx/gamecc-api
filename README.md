@@ -1,1 +1,1 @@
-# GameLt - Collections And Game Classifications
+# GameCC - Collections And Game Classifications
