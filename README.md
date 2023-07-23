@@ -1,1 +1,2 @@
-# GameCC - Collections And Game Classifications
+# GAMECC
+## Collections And Game Classifications
