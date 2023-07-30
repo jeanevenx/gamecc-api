@@ -3,8 +3,8 @@ package net.tecno360.gamecc.controllers;
 import net.tecno360.gamecc.dto.ChangeGamePositionDTO;
 import net.tecno360.gamecc.dto.ClassificationListDTO;
 import net.tecno360.gamecc.dto.GameMinDTO;
-import net.tecno360.gamecc.services.ClassificationListService;
-import net.tecno360.gamecc.services.GameService;
+import net.tecno360.gamecc.services.impl.ClassificationListServiceImpl;
+import net.tecno360.gamecc.services.impl.GameServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,27 +15,27 @@ import java.util.List;
 public class ClassificationListController {
 
     @Autowired
-    private ClassificationListService classificationListService;
+    private ClassificationListServiceImpl classificationListServiceImpl;
 
     @Autowired
-    private GameService gameService;
+    private GameServiceImpl gameServiceImpl;
 
     @GetMapping
     public List<ClassificationListDTO> getAll(){
-        return classificationListService.findAllClassification();
+        return classificationListServiceImpl.getAllClassification();
 
     }
 
     @GetMapping(value = "/{id}/games")
     public List<GameMinDTO> getGameByClassification(@PathVariable Long id){
 
-        return gameService.findGameByClassification(id);
+        return gameServiceImpl.findGameByClassification(id);
     }
 
     @PostMapping(value = "/{id}/replacement")
     public void move(@PathVariable Long id, @RequestBody ChangeGamePositionDTO body){
 
-        classificationListService.move(id, body.getOriginIndex(), body.getDestinationIndex());
+        classificationListServiceImpl.move(id, body.getOriginIndex(), body.getDestinationIndex());
     }
 
 
