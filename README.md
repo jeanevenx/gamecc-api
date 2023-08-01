@@ -1,6 +1,7 @@
 # Game cc - Collections And Game Classifications
 
 ### Domain Model:
-![](./gamecc/gamecc/src/main/resources/static/gamecc-domain-model.png)
+<img src="./gamecc/src/main/resources/static/gamecc-domain-model.png" title="gamecc domain model"/>
+
 ### Architecture: Layer pattern
-<img src="./gamecc/src/main/resources/static/gamecc-architecture.png" title="gamecc-api-architecture"/>
+<img src="./gamecc/src/main/resources/static/gamecc-architecture.png" title="gamecc api architecture"/>
