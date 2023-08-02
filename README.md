@@ -8,7 +8,7 @@ The Game cc API is a powerful tool designed to help users organize and manage th
 Whether you are an avid gamer, a game collector, or simply someone who enjoys exploring different gaming genres, this API has got you covered!
 
 [**| Architecture |**](#architecture-layer-pattern)
-[**Domain Model |**](#domain-model)
+[**Domain Model |**](#domain-model)[ **Documentation |**](#domain-model)
 
 ## Purpose:
 The primary purpose of the Game cc API is to provide users with a seamless experience to create and maintain their game collections. 
