@@ -18,7 +18,7 @@ It offers an extensive catalog of games, sorted by various categories, making it
 * **Game Catalog:** The API offers an extensive catalog of games, neatly categorized to help users find their favorite games quickly.
 * **Collection Creation:** Users can easily create and customize their own collections by selecting games from the catalog.
 * **Category Filter:** The API allows users to filter games based on their preferred gaming categories.
-* **Personalization:** Users can add personal notes, ratings, and comments to their game entries within the collection.
+* ~~**Personalization:** Users can add personal notes, ratings, and comments to their game entries within the collection.~~
 * **Easy Integration:** The Game cc API is built with Java and Spring, making it highly accessible and easy to integrate into any application.
 * **Additional features:** The API also enables users to change the position of games within the catalog and the collection. 
 This provides flexibility and ease in organizing the list of games according to individual user preferences.
