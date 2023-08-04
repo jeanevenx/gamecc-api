@@ -48,7 +48,7 @@ public class ClassificationListServiceImpl implements IClassificationListService
         return Optional.of(new ClassificationListDTO(result));
     }
 
-    @Transactional(readOnly = true)
+    @Transactional()
     @Override
     public void move(Long id, int originIndex, int destinationIndex){
 
