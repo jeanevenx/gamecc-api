@@ -1,6 +1,5 @@
 package net.tecno360.gamecc.entities;
 
-import jakarta.persistence.Column;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -13,7 +12,7 @@ public class GameTest {
     void validateGameProperties(){
         Game game = new Game();
 
-        game.setId(1);
+        game.setId(1L);
         game.setTitle("Red Dead Redemption 2");
         game.setYear(2018);
         game.setGenre("Role-playing (RPG), Adventure");
@@ -23,7 +22,7 @@ public class GameTest {
         game.setShortDescription("Some short description for this game.");
         game.setLongDescription("Some long description for this super and funny game.");
 
-        assertEquals(1, game.getId());
+        assertEquals(1L, game.getId());
         assertEquals("Red Dead Redemption 2", game.getTitle());
         assertEquals(2018, game.getYear());                                                                                
         assertEquals("Role-playing (RPG), Adventure", game.getGenre());
