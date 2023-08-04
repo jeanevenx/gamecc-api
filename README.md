@@ -1,6 +1,6 @@
-# Game CC - Collections of Games API
+<h1 align="center">Game CC - Collections of Games API 🎮</h1>
 
-### Welcome to Game CC - the Collections of Games API! 🎮
+### Welcome to Game CC - the Collections of Games API!
 
 
 ## About:
@@ -9,6 +9,8 @@ Whether you are an avid gamer, a game collector, or simply someone who enjoys ex
 
 [**| Architecture |**](#architecture-layer-pattern)
 [**Domain Model |**](#domain-model)[ **Documentation |**](#domain-model)
+
+
 
 ## Purpose:
 The primary purpose of the Game cc API is to provide users with a seamless experience to create and maintain their game collections. 
