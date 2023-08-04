@@ -3,15 +3,12 @@ package net.tecno360.gamecc.controllers;
 import net.tecno360.gamecc.dto.ChangeGamePositionDTO;
 import net.tecno360.gamecc.dto.ClassificationListDTO;
 import net.tecno360.gamecc.dto.GameMinDTO;
-import net.tecno360.gamecc.exception.ClassificationNotFoundException;
-import net.tecno360.gamecc.exception.GameNotFoundException;
 import net.tecno360.gamecc.services.impl.ClassificationListServiceImpl;
 import net.tecno360.gamecc.services.impl.GameServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,9 +43,10 @@ public class ClassificationListController {
     }
 
     @PostMapping(value = "/{id}/replacement")
-    public void move(@PathVariable Long id, @RequestBody ChangeGamePositionDTO body){
+    public void swapGame(@PathVariable Long id, @RequestBody ChangeGamePositionDTO body){
 
         classificationListServiceImpl.move(id, body.getOriginIndex(), body.getDestinationIndex());
+
     }
 
 
