@@ -4,6 +4,8 @@ package net.tecno360.gamecc.dto;
 import net.tecno360.gamecc.entities.Game;
 import net.tecno360.gamecc.projections.GameMinProjection;
 
+import java.util.Objects;
+
 public class GameMinDTO {
 
 
@@ -49,5 +51,17 @@ public class GameMinDTO {
 
     public String getShortDescription() {
         return shortDescription;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GameMinDTO that)) return false;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

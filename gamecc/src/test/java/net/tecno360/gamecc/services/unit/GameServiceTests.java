@@ -4,6 +4,7 @@ import net.tecno360.gamecc.dto.GameMinDTO;
 import net.tecno360.gamecc.entities.Game;
 import net.tecno360.gamecc.repositories.GameRepository;
 import net.tecno360.gamecc.services.impl.GameServiceImpl;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -24,22 +25,14 @@ public class GameServiceTests {
 
     @Test
     public void testFindAllGameMinDTO(){
-        List<GameMinDTO> gameMinDTO1 = listGame().stream().map(GameMinDTO::new).toList();
 
        Mockito.when(gameRepository.findAll()).thenReturn(listGame());
 
+       List<GameMinDTO> gameToGameMinDTO = listGame().stream().map(GameMinDTO::new).toList();
+
        List<GameMinDTO> gameMinDTO = gameService.findAllGameMinDTOs();
 
-
-
-
-
-       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-       gameMinDTO.forEach(System.out::println);
-       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-       System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-
+       Assertions.assertEquals(gameToGameMinDTO, gameMinDTO);
 
     }
 

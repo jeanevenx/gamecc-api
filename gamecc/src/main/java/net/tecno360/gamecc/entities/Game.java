@@ -122,4 +122,19 @@ public class Game {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", genre='" + genre + '\'' +
+                ", platforms='" + platforms + '\'' +
+                ", score=" + score +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", longDescription='" + longDescription + '\'' +
+                '}';
+    }
 }
