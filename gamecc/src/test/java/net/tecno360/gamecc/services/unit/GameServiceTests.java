@@ -1,5 +1,6 @@
 package net.tecno360.gamecc.services.unit;
 
+import net.tecno360.gamecc.dto.GameDTO;
 import net.tecno360.gamecc.dto.GameMinDTO;
 import net.tecno360.gamecc.entities.Game;
 import net.tecno360.gamecc.repositories.GameRepository;
@@ -8,11 +9,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class GameServiceTests {
@@ -25,10 +28,12 @@ public class GameServiceTests {
 
     @Test
     public void testFindAllGameMinDTO(){
+        List<Game> gameList = new ArrayList<>();
+        gameList.add(getGame());
 
-       Mockito.when(gameRepository.findAll()).thenReturn(listGame());
+       when(gameRepository.findAll()).thenReturn(gameList);
 
-       List<GameMinDTO> gameToGameMinDTO = listGame().stream().map(GameMinDTO::new).toList();
+       List<GameMinDTO> gameToGameMinDTO = gameList.stream().map(GameMinDTO::new).toList();
 
        List<GameMinDTO> gameMinDTO = gameService.findAllGameMinDTOs();
 
@@ -36,8 +41,7 @@ public class GameServiceTests {
 
     }
 
-
-    List<Game> listGame(){
+    Game getGame(){
         Game game = new Game();
 
         game.setId(1L);
@@ -50,11 +54,8 @@ public class GameServiceTests {
         game.setShortDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit.");
         game.setLongDescription("Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit esse officiis corrupti unde repellat non quibusdam!");
 
-        List<Game> list = new ArrayList<>();
 
-        list.add(game);
-
-        return list;
+        return game;
     }
 
 }
