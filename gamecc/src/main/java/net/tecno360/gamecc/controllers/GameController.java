@@ -27,7 +27,7 @@ public class GameController {
 
     @GetMapping
     public ResponseEntity<List<GameMinDTO>> getAll(){
-        List<GameMinDTO> games = gameServiceImpl.findAllGames();
+        List<GameMinDTO> games = gameServiceImpl.findAllGameMinDTOs();
 
             return ResponseEntity.status(HttpStatus.OK).body(games);
 

@@ -18,14 +18,14 @@ import java.util.Optional;
 public class GameServiceImpl implements IGameService {
 
     private final  GameRepository gameRepo;
-    @Autowired
+
     public GameServiceImpl(GameRepository gameRepo) {
         this.gameRepo = gameRepo;
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<GameMinDTO> findAllGames(){
+    public List<GameMinDTO> findAllGameMinDTOs(){
         List<Game> result = gameRepo.findAll();
         return result.stream().map(GameMinDTO::new).toList();
 
