@@ -57,11 +57,11 @@ public class GameMinDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof GameMinDTO that)) return false;
-        return id == that.id;
+        return id == that.id && Objects.equals(title, that.title);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, title);
     }
 }

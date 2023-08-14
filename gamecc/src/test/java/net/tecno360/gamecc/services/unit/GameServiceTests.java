@@ -33,15 +33,27 @@ public class GameServiceTests {
 
        when(gameRepository.findAll()).thenReturn(gameList);
 
-       List<GameMinDTO> gameToGameMinDTO = gameList.stream().map(GameMinDTO::new).toList();
+       List<GameMinDTO> expectedGameMinDTO = gameList.stream().map(GameMinDTO::new).toList();
 
        List<GameMinDTO> gameMinDTO = gameService.findAllGameMinDTOs();
 
-       Assertions.assertEquals(gameToGameMinDTO, gameMinDTO);
+       Assertions.assertEquals(expectedGameMinDTO, gameMinDTO);
 
     }
 
-    Game getGame(){
+    @Test
+    public void testFindGameById(){
+
+        when(gameRepository.findById(1L)).thenReturn(Optional.of(getGame()));
+        Optional<GameDTO> gameDTO = gameService.findGameById(1L);
+
+        GameDTO expectedGameDTO = new GameDTO(getGame());
+
+        Assertions.assertEquals(expectedGameDTO, gameDTO.orElse(null));
+    }
+
+
+    private Game getGame(){
         Game game = new Game();
 
         game.setId(1L);
