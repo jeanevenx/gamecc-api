@@ -7,7 +7,6 @@ import net.tecno360.gamecc.exception.GameNotFoundException;
 import net.tecno360.gamecc.projections.GameMinProjection;
 import net.tecno360.gamecc.repositories.GameRepository;
 import net.tecno360.gamecc.services.interfaces.IGameService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,14 +17,14 @@ import java.util.Optional;
 public class GameServiceImpl implements IGameService {
 
     private final  GameRepository gameRepo;
-    @Autowired
+
     public GameServiceImpl(GameRepository gameRepo) {
         this.gameRepo = gameRepo;
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<GameMinDTO> findAllGames(){
+    public List<GameMinDTO> findAllGameMinDTOs(){
         List<Game> result = gameRepo.findAll();
         return result.stream().map(GameMinDTO::new).toList();
 

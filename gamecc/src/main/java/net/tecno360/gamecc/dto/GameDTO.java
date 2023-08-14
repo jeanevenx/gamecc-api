@@ -3,6 +3,8 @@ package net.tecno360.gamecc.dto;
 import net.tecno360.gamecc.entities.Game;
 import org.springframework.beans.BeanUtils;
 
+import java.util.Objects;
+
 
 public class GameDTO {
     private long id;
@@ -92,5 +94,32 @@ public class GameDTO {
 
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GameDTO gameDTO)) return false;
+        return id == gameDTO.id && Objects.equals(title, gameDTO.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title);
+    }
+
+    @Override
+    public String toString() {
+        return "GameDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", genre='" + genre + '\'' +
+                ", platforms='" + platforms + '\'' +
+                ", score=" + score +
+                ", imgUrl='" + imgUrl + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", longDescription='" + longDescription + '\'' +
+                '}';
     }
 }

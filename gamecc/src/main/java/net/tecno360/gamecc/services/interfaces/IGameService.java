@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IGameService {
-    List<GameMinDTO> findAllGames();
+    List<GameMinDTO> findAllGameMinDTOs();
     Optional<GameDTO>  findGameById(Long id);
     List<GameMinDTO> findGameByClassification(Long classificationId);
 }
