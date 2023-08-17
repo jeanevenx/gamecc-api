@@ -51,8 +51,6 @@ public class GameServiceTests {
 
         Assertions.assertEquals(expectedGameDTO, gameDTO.orElse(null));
     }
-
-
     private Game getGame(){
         Game game = new Game();
 
