@@ -37,7 +37,7 @@ You'll be able to explore the API's endpoints and routes, allowing you to intera
 
 Stay tuned for updates, and I can't wait to share more about how to use the Game cc API with you!  
 
-<span style="color: blue;">**Happy gaming!** 🎮🚀</span>
+<span style="color: blue;">**Happy gaming!!!** 🎮🚀</span>
 ### Domain Model:
 <img src="./gamecc/src/main/resources/static/gamecc-domain-model.png" title="gamecc domain model"/>
 
