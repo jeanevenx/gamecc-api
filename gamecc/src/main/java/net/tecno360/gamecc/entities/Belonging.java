@@ -12,6 +12,7 @@ public class Belonging {
     @EmbeddedId
     private BelongingPK id = new BelongingPK();
     private Integer position;
+    private static final long serialVersionUID = 1L;    
 
     public Belonging() {
     }
